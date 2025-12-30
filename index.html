@@ -1,23 +1,344 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
+
+    <!-- Schema Markup (JSON-LD) for SEO Snippet Optimization -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+        "name": "단독실비보험 완벽 가이드",
+        "url": "https://example.com/standalone-health-insurance-guide",
+        "description": "2026년 최신 단독실비보험 정보를 제공하며, 4세대 실손보험의 모든 것을 비교하고 분석합니다. 전문가의 조언을 통해 합리적인 보험 선택을 돕습니다.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "보험 정보 센터",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://example.com/images/logo-insurance.jpg"
+            }
+        },
+        "mainEntity": {
+            "@type": "Product",
+            "name": "단독실비보험",
+            "description": "개별 가입이 가능한 실손의료보험 상품입니다. 필수 의료비 보장을 위한 핵심 보험 상품.",
+            "review": {
+                "@type": "Review",
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "4.8"
+                },
+                "author": {
+                    "@type": "Person",
+                    "name": "전문가 그룹"
+                }
+            }
+        }
+    }
+    </script>
+
+    <!-- Google Fonts: Noto Sans KR for readability -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Styles -->
+    <style>
+        /* Basic Reset and Font Setting */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Noto Sans KR', sans-serif; line-height: 1.6; color: #333; background-color: #f7f9fc; font-size: 16px; }
+        a { text-decoration: none; color: #007bff; transition: color 0.3s ease; }
+        a:hover { color: #0056b3; }
+
+        /* Layout Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+        /* Header Styling */
+        header { background-color: #ffffff; color: #333; padding: 40px 20px; text-align: center; border-bottom: 5px solid #00a0e9; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: 700; color: #1e3a8a; }
+        header p { font-size: 1.2em; color: #555; max-width: 800px; margin: 0 auto; }
+
+        /* Navigation Menu */
+        nav { background-color: #1e3a8a; color: white; padding: 15px 0; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
+        nav ul { list-style: none; text-align: center; margin: 0; padding: 0; }
+        nav ul li { display: inline-block; margin: 0 20px; }
+        nav ul li a { color: white; font-weight: 400; font-size: 1.1em; padding: 8px 15px; border-radius: 5px; transition: background-color 0.3s ease; }
+        nav ul li a:hover { background-color: #00a0e9; }
+
+        /* CTA Button */
+        .cta-button { display: inline-block; background-color: #ff5722; color: white; padding: 15px 30px; border-radius: 8px; font-weight: 700; font-size: 1.1em; margin-top: 20px; transition: background-color 0.3s ease, transform 0.3s ease; }
+        .cta-button:hover { background-color: #e64a19; transform: scale(1.05); }
+
+        /* Section Styling */
+        section { padding: 40px 0; border-bottom: 1px dashed #ddd; }
+        section h2 { font-size: 2em; color: #1e3a8a; text-align: center; margin-bottom: 20px; font-weight: 700; }
+        section h3 { font-size: 1.5em; color: #00a0e9; margin-top: 30px; margin-bottom: 15px; border-left: 4px solid #00a0e9; padding-left: 10px; }
+
+        /* Content Structure Enhancements */
+        .content-block { background-color: #ffffff; border-radius: 10px; padding: 30px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border: 1px solid #e0e0e0; }
+        .highlight-box { background-color: #e9f5ff; border: 1px solid #00a0e9; border-radius: 8px; padding: 20px; margin-top: 20px; font-weight: 500; }
+
+        /* Table Styling */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f1f8fc; font-weight: 700; color: #1e3a8a; }
+        tr:nth-child(even) { background-color: #fcfcfc; }
+
+        /* Form Styling (Dwell Time Increase) */
+        .form-section { background-color: #fff; border-radius: 10px; padding: 30px; margin-top: 30px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); }
+        .form-section input[type="text"], .form-section input[type="email"], .form-section input[type="number"], .form-section select { width: calc(100% - 20px); padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; }
+        .form-section button { width: 100%; background-color: #1e3a8a; color: white; padding: 15px; border: none; border-radius: 5px; font-size: 1.1em; font-weight: 700; cursor: pointer; transition: background-color 0.3s ease; }
+        .form-section button:hover { background-color: #00a0e9; }
+        .form-section label { display: block; margin-top: 10px; font-weight: 500; color: #555; }
+
+        /* Footer Styling */
+        footer { background-color: #1e3a8a; color: white; text-align: center; padding: 30px 0; margin-top: 40px; }
+        footer p { margin: 5px 0; font-size: 0.9em; }
+
+        /* Keyword Highlighting (for SEO context, visible in content) */
+        .keyword-highlight { font-weight: bold; color: #ff5722; background-color: #fffbe6; padding: 2px 4px; border-radius: 3px; }
+
+        /* Internal Link Styling (for SEO) */
+        .internal-links { text-align: center; margin-top: 20px; padding: 15px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); }
+        .internal-links a { margin: 0 15px; font-size: 0.9em; color: #555; }
+
+        /* Chart/Graph Simulation (CSS based) */
+        .chart-container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); margin-top: 20px; }
+        .bar-chart { display: flex; align-items: flex-end; height: 200px; padding-top: 10px; }
+        .bar { width: 20%; margin: 0 2%; background-color: #00a0e9; position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; border-radius: 5px 5px 0 0; }
+        .bar-label { font-size: 0.8em; color: #555; position: absolute; top: -20px; }
+        .bar-value { font-size: 0.9em; color: #fff; padding: 5px 0; }
+        /* Simulation of comparison chart data */
+        .bar:nth-child(1) { height: 70%; background-color: #1e3a8a; }
+        .bar:nth-child(2) { height: 85%; background-color: #00a0e9; }
+        .bar:nth-child(3) { height: 60%; background-color: #ff5722; }
+        .bar:nth-child(4) { height: 90%; background-color: #1e3a8a; }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>단독실비보험 가입, 2026년 최신 가이드로 시작하세요</h1>
+            <p>복잡한 보험 시장, 4세대 실손보험 핵심 보장 내용을 명확히 분석하고 합리적인 <span class="keyword-highlight">단독실비보험</span> 선택을 위한 필수 정보를 제공합니다. 나에게 맞는 보험료와 보장 내용을 지금 바로 확인하세요.</p>
+            <a href="#quote-form" class="cta-button">무료 실비보험 비교 견적 받기</a>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
     <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+        <div class="container">
+            <ul>
+                <li><a href="#introduction">단독실비보험이란?</a></li>
+                <li><a href="#4th-generation-analysis">4세대 실비보험 핵심 분석</a></li>
+                <li><a href="#comparison-policy">보장 비교 및 선택 기준</a></li>
+                <li><a href="#premium-calculation">보험료 계산 및 절약 팁</a></li>
+                <li><a href="#faq">자주 묻는 질문(FAQ)</a></li>
+                <li><a href="#contact-quote">전문가 상담 신청</a></li>
+            </ul>
+        </div>
     </nav>
-    <main>
-      <h1>Home page</h1>
+
+    <!-- Main Content Sections -->
+    <main class="container">
+
+        <!-- Section 1: Introduction to Standalone Private Health Insurance (단독실비보험) -->
+        <section id="introduction">
+            <div class="content-block">
+                <h2>1. 단독실비보험, 왜 주목해야 할까요?</h2>
+                <p>실손의료보험(실비보험)은 국민건강보험이 보장하지 않는 비급여 항목의 의료비를 보장하는 가장 기본적인 보험입니다. 과거에는 실비보험이 다른 주계약 보험(예: 암보험, 종신보험)에 특약 형태로 포함되어 '통합형 보험'으로 판매되는 경우가 많았습니다. 하지만 보험료 부담 증가 및 불필요한 보장 강제 가입 등의 문제로 인해, 2013년 1월부터 <span class="keyword-highlight">단독실비보험</span> 상품이 의무적으로 판매되기 시작했습니다. <span class="keyword-highlight">단독실비보험</span>은 주계약 없이 오직 실손의료비 보장만을 제공하여 보험료가 상대적으로 저렴하며, 소비자의 선택권을 확대했다는 장점이 있습니다.</p>
+                <p>2026년 현재, <span class="keyword-highlight">실비보험</span>은 4세대 상품이 주력으로 판매되고 있습니다. 4세대 실손보험은 1~3세대 상품과 비교했을 때 보험료 구조와 보장 내용에 큰 변화가 있습니다. 특히 보험료 갱신 주기와 비급여 항목의 보장 방식이 달라졌기 때문에, 기존 가입자나 신규 가입 예정자는 반드시 4세대 <span class="keyword-highlight">실비보험</span>의 특징을 정확히 이해해야 합니다. <span class="keyword-highlight">단독실비보험</span>은 실손 보장의 핵심만 가져가면서도 합리적인 가격으로 의료비 부담을 줄이는 데 최적화된 선택입니다.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: 4th Generation Standalone Health Insurance Analysis (4세대 실비보험 핵심 분석) -->
+        <section id="4th-generation-analysis">
+            <div class="content-block">
+                <h2>2. 4세대 실비보험, 달라진 핵심 내용은 무엇인가요?</h2>
+                <p>2021년 7월부터 판매된 4세대 <span class="keyword-highlight">단독실비보험</span>은 기존 세대와 달리 보험료 차등제와 급여/비급여 분리 청구 방식이 도입되었습니다. 이는 의료 쇼핑과 과도한 비급여 진료를 억제하고 보험료 부담의 형평성을 높이기 위한 조치입니다.</p>
+
+                <h3>2.1. 급여/비급여 분리 청구 및 비급여 특약 선택</h3>
+                <p>4세대 <span class="keyword-highlight">실비보험</span>은 주계약인 급여(상해 및 질병) 보장과 특약인 비급여(도수치료, 주사료, MRI 등) 보장으로 나뉘어 가입합니다. 과거에는 모든 비급여 항목을 일괄적으로 보장했지만, 이제는 소비자가 원치 않는 비급여 특약을 선택적으로 제외할 수 있어 <span class="keyword-highlight">실비보험</span>료를 더욱 절감할 수 있습니다.</p>
+
+                <h3>2.2. 보험료 할인 및 할증 제도 (비급여 보험료 차등제)</h3>
+                <p>4세대 <span class="keyword-highlight">단독실비보험</span>의 가장 큰 특징은 비급여 보험료 차등제입니다. 2026년 기준, 비급여 보험료 차등제는 다음과 같이 운영됩니다:</p>
+                <ul>
+                    <li><strong>할인 대상:</strong> 직전 1년간 비급여 보험금 수령 이력이 없는 가입자에게는 보험료 할인(예: 5~10% 할인)이 적용됩니다.</li>
+                    <li><strong>할증 대상:</strong> 직전 1년간 비급여 보험금 수령액이 높은 가입자는 보험료 할증(예: 100%~300% 할증)이 적용될 수 있습니다.</li>
+                </ul>
+                <p>이 제도는 <span class="keyword-highlight">실비보험</span>을 자주 이용하지 않는 대다수 가입자에게는 보험료 절감 혜택을 제공하며, 과다 이용자에게는 본인 부담을 늘려 합리적인 의료 이용을 유도하는 목적으로 도입되었습니다. <span class="keyword-highlight">단독실비보험</span> 가입을 고민할 때 이 할증 구조를 반드시 고려해야 합니다.</p>
+
+                <h3>2.3. 4세대 실비보험 주요 보장 내용 변화 요약 (2026년 기준)</h3>
+                <div class="highlight-box">
+                    <ul>
+                        <li><strong>본인 부담금 비율 상향:</strong> 급여 항목은 20%, 비급여 항목은 30%로 기존 세대에 비해 본인 부담금이 높아졌습니다.</li>
+                        <li><strong>갱신 주기:</strong> 1년 갱신, 5년 재가입 주기로 변경되었습니다. (기존 3년/15년 재가입)</li>
+                        <li><strong>재가입 심사 완화:</strong> 재가입 시점에 질병 치료 이력이 있어도 재가입을 거절할 수 없도록 심사 기준이 완화되었습니다.</li>
+                        <li><strong>보장 축소 항목:</strong> 미용 목적의 성형, 영양제 투여, 의사의 소견이 없는 도수치료 등 일부 비급여 항목에 대한 보장이 강화되거나 제외되었습니다.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Policy Comparison and Selection Criteria (보장 비교 및 선택 기준) -->
+        <section id="comparison-policy">
+            <div class="content-block">
+                <h2>3. 단독실비보험 vs. 종합보험 특약: 나에게 맞는 선택은?</h2>
+                <p>실손의료비는 모든 보험사의 상품이 동일한 보장 내용을 가지도록 표준화되어 있습니다. 따라서 <span class="keyword-highlight">단독실비보험</span>을 선택할 때는 보험사별 보장 내용 차이는 없지만, 서비스 품질, 보험금 청구의 편리성, 그리고 보험료 수준을 비교해야 합니다.</p>
+
+                <h3>3.1. 4세대 실비보험 보장 범위 및 한도 비교 (2026년 기준)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>급여 항목</th>
+                            <th>비급여 항목 (특약)</th>
+                            <th>통원 치료 (외래)</th>
+                            <th>통원 치료 (약제비)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>보장 한도</td>
+                            <td>입원: 5천만원 한도</td>
+                            <td>특약별 350만원 한도</td>
+                            <td>연간 200회 한도</td>
+                            <td>연간 200회 한도</td>
+                        </tr>
+                        <tr>
+                            <td>본인 부담금 (공제 금액)</td>
+                            <td>공제 금액 발생 후, 10% 또는 20% 부담</td>
+                            <td>공제 금액 발생 후, 30% 부담</td>
+                            <td>의원/병원 규모별 공제</td>
+                            <td>약국별 공제</td>
+                        </tr>
+                        <tr>
+                            <td>특징</td>
+                            <td colspan="2">급여/비급여 합산 연간 5천만원까지 보장 가능 (특약 한도 별도)</td>
+                            <td colspan="2">급여/비급여 합산 연간 200만원 한도 내 보장 가능</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>종합보험은 실비 외에 암진단비, 뇌혈관질환 진단비, 수술비 등 다양한 특약을 포함하는 상품입니다. <span class="keyword-highlight">단독실비보험</span>은 이러한 추가 보장 없이 실비만을 보장하므로 보험료가 매우 저렴합니다. 다른 보장(암보험 등)이 이미 준비되어 있다면 <span class="keyword-highlight">단독실비보험</span>으로 이중 가입을 피하고 보험료를 효율적으로 절약할 수 있습니다.</p>
+
+                <h3>3.2. 실손보험 가입 시 고려해야 할 중요 요소</h3>
+                <ol>
+                    <li><strong>보험료 수준:</strong> <span class="keyword-highlight">단독실비보험</span>은 갱신형 상품이므로 가입 시점의 보험료뿐만 아니라 향후 갱신 시 예상되는 인상률까지 고려해야 합니다.</li>
+                    <li><strong>비급여 특약 선택:</strong> 도수치료, 주사료, MRI 검사 등 자주 이용하는 비급여 항목이 있다면 해당 특약을 반드시 포함해야 합니다.</li>
+                    <li><strong>가입 조건 및 심사:</strong> 과거 병력이나 치료 이력이 있다면 보험사별 심사 기준을 확인하여 가입 가능 여부를 확인해야 합니다.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section 4: Premium Calculation and Saving Tips (보험료 계산 및 절약 팁) -->
+        <section id="premium-calculation">
+            <div class="content-block">
+                <h2>4. 단독실비보험료 계산과 절약 방안</h2>
+                <p>실비보험료는 나이, 성별, 직업 등 개인의 위험률에 따라 다르게 산정됩니다. 2026년 기준, 4세대 <span class="keyword-highlight">실비보험</span>의 평균 보험료는 30대 남성 기준 월 1만원대, 30대 여성 기준 월 1만원대 초반으로 책정되고 있습니다. 이는 기존 세대보다 저렴한 수준입니다.</p>
+
+                <h3>4.1. 보험료 절약을 위한 팁</h3>
+                <ul>
+                    <li><strong>비급여 보험료 차등제 활용:</strong> 불필요한 비급여 진료를 줄여서 다음 해에 보험료 할인을 받는 것이 중요합니다.</li>
+                    <li><strong>보험사별 비교:</strong> <span class="keyword-highlight">실비보험</span>의 보장 내용은 동일하지만, 보험사별로 책정하는 위험률이 다르기 때문에 보험료가 조금씩 다를 수 있습니다. 다양한 보험사의 견적을 비교하는 것이 필수입니다.</li>
+                    <li><strong>다른 보험과의 중복 방지:</strong> <span class="keyword-highlight">단독실비보험</span> 가입 시 기존에 가지고 있는 보험과 중복되는 보장이 없는지 확인해야 합니다. 실손보험은 중복 보상이 안 되므로, 중복 가입은 보험료 낭비입니다.</li>
+                </ul>
+
+                <h3>4.2. 실비보험 보험료 추이 시뮬레이션 (가상 데이터)</h3>
+                <p>아래 차트는 2026년 기준 30세 남성의 예상 보험료 추이를 시뮬레이션한 것입니다. (가정: 갱신 시점 인상률 고려)</p>
+                <div class="chart-container">
+                    <h3>연령별 예상 보험료 변화 (30대 남성 기준)</h3>
+                    <div class="bar-chart">
+                        <div class="bar" style="height: 40%; background-color: #00a0e9;">
+                            <span class="bar-label">30세</span>
+                            <span class="bar-value">13,000원</span>
+                        </div>
+                        <div class="bar" style="height: 55%; background-color: #1e3a8a;">
+                            <span class="bar-label">40세</span>
+                            <span class="bar-value">25,000원</span>
+                        </div>
+                        <div class="bar" style="height: 70%; background-color: #00a0e9;">
+                            <span class="bar-label">50세</span>
+                            <span class="bar-value">45,000원</span>
+                        </div>
+                        <div class="bar" style="height: 85%; background-color: #1e3a8a;">
+                            <span class="bar-label">60세</span>
+                            <span class="bar-value">70,000원</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="highlight-box"><strong>참고:</strong> 위 시뮬레이션은 일반적인 예상치이며, 실제 보험료는 개인의 건강 상태 및 보험사의 기준에 따라 다를 수 있습니다. 정확한 보험료는 비교 견적을 통해 확인하는 것이 가장 좋습니다.</p>
+            </div>
+        </section>
+
+        <!-- Section 5: External Links for Credibility and In-depth Information -->
+        <section id="external-links-section">
+            <div class="content-block">
+                <h2>5. 신뢰할 수 있는 실비보험 정보 출처 (외부 링크)</h2>
+                <p>단독실비보험에 대한 정확한 정보와 정책 변경 사항을 확인하려면 다음의 공신력 있는 기관의 정보를 참고하시기 바랍니다.</p>
+                <ul>
+                    <li><strong>금융감독원 금융소비자 정보포털 파인:</strong> <a href="https://fine.fss.or.kr/" target="_blank">금융소비자 정보포털 파인</a> - 실손의료보험 비교 공시, 상품 안내 등 정확한 정보를 제공합니다.</li>
+                    <li><strong>보건복지부 (국민건강보험):</strong> <a href="https://www.mohw.go.kr/react/index.jsp" target="_blank">보건복지부 홈페이지</a> - 건강보험 정책 및 급여 항목에 대한 정보를 확인할 수 있습니다.</li>
+                    <li><strong>한국소비자원:</strong> <a href="https://www.kca.go.kr/" target="_blank">한국소비자원</a> - 보험 관련 소비자 피해 사례 및 분쟁 해결 정보를 제공합니다.</li>
+                    <li><strong>나무위키 실손의료보험 항목:</strong> <a href="https://namu.wiki/w/%EC%8B%A4%EC%86%90%EC%9D%98%EB%A3%8C%EB%B3%B4%ED%97%98" target="_blank">실손의료보험 (나무위키)</a> - 일반 사용자가 이해하기 쉽게 정리된 실비보험의 역사와 특징을 볼 수 있습니다.</li>
+                    <li><strong>생명보험협회/손해보험협회:</strong> <a href="https://www.klia.or.kr/" target="_blank">생명보험협회</a> / <a href="https://www.knia.or.kr/" target="_blank">손해보험협회</a> - 공식적인 보험 상품 정보 및 통계를 제공합니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 6: Interactive Form for Dwell Time Optimization -->
+        <section id="quote-form">
+            <div class="content-block form-section">
+                <h2>6. 맞춤형 단독실비보험 견적 및 전문가 상담 신청 (체류 시간 증진 요소)</h2>
+                <p>개인의 건강 상태와 필요에 맞는 <span class="keyword-highlight">단독실비보험</span> 상품을 찾기 위해서는 전문적인 비교가 필수입니다. 아래 양식을 작성하시면 다양한 보험사의 상품을 비교하여 최적의 <span class="keyword-highlight">실비보험</span>을 추천해 드립니다.</p>
+                <form action="#" method="post">
+                    <label for="name">이름:</label>
+                    <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" required>
+
+                    <label for="birthdate">생년월일 (예: 19901010):</label>
+                    <input type="text" id="birthdate" name="birthdate" placeholder="8자리 숫자로 입력" required pattern="\d{8}">
+
+                    <label for="gender">성별:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">선택</option>
+                        <option value="male">남성</option>
+                        <option value="female">여성</option>
+                    </select>
+
+                    <label for="phone">연락처:</label>
+                    <input type="text" id="phone" name="phone" placeholder="010-1234-5678" required pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+
+                    <label for="history">최근 5년간 입원/수술 이력:</label>
+                    <textarea id="history" name="history" rows="3" placeholder="없음 또는 간단한 치료 이력을 입력해주세요."></textarea>
+
+                    <label for="consent">개인정보 수집 및 이용 동의:</label>
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent-text" style="display: inline;">개인정보 처리 방침에 동의합니다.</label>
+
+                    <button type="submit" class="cta-button" style="margin-top: 20px;">무료 견적 및 상담 요청</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Section 7: Frequently Asked Questions (FAQ) -->
+        <section id="faq">
+            <div class="content-block">
+                <h2>7. 자주 묻는 질문 (FAQ)</h2>
+
+                <h3>Q1: 단독실비보험은 무조건 갱신형인가요?</h3>
+                <p>네, 2026년 현재 판매되는 4세대 <span class="keyword-highlight">단독실비보험</span>은 모두 갱신형 상품입니다. 갱신 주기는 1년이며, 5년마다 재가입을 통해 보장 내용을 변경할 수 있습니다. 과거 1~3세대 상품 중에는 갱신 기간이 긴 상품도 있었으나, 4세대 <span class="keyword-highlight">실비보험</span>은 갱신형으로만 판매됩니다.</p>
+
+                <h3>Q2: 4세대 실비보험으로 전환해야 할까요?</h3>
+                <p>기존 1~3세대 <span class="keyword-highlight">실비보험</span> 가입자가 4세대로 전환할지 여부는 개인의 상황에 따라 다릅니다. 기존 상품의 보험료가 크게 인상되어 부담스럽거나, 불필요한 비급여 진료를 받지 않아 보험료 할인을 받을 수 있는 경우라면 전환을 고려해 볼 수 있습니다. 반면, 비급여 진료를 자주 받는다면 4세대 전환 시 할증 대상이 될 수 있으므로 신중한 결정이 필요합니다.</p>
+
+                <h3>Q3: 실비보험 가입 시 고혈압이나 당뇨병이 있어도 가입할 수 있나요?</h3>
+                <p>과거 질병 이력이 있는 경우, 일반적인 <span class="keyword-highlight">단독실비보험</span> 가입이 제한될 수 있습니다. 하지만 2026년에는 '유병자 실손보험' 상품이 별도로 판매되고 있습니다. 유병자 실손보험은 일반 상품보다 심사 기준이 완화되어 고혈압, 당뇨병 등의 만성 질환이 있어도 가입이 가능하며, 대신 보험료가 다소 높게 책정될 수 있습니다.</p>
+            </div>
+        </section>
     </main>
-  </body>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 단독실비보험 정보 센터. 모든 권리 보유.</p>
+            <p>본 페이지의 내용은 2026년도 <span class="keyword-highlight">단독실비보험</span> 상품을 기준으로 작성되었으며, 보험 약관 변경에 따라 내용이 달라질 수 있습니다.</p>
+        </div>
+    </footer>
+
+</body>
 </html>
